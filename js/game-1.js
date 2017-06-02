@@ -4,12 +4,12 @@ import greetingScreen from './greeting';
 import blockHeader from './header'
 import blockFooter from './footer'
 import {initialState} from './data'
-import {level1} from './data'
+import {levels} from './data'
 
 const blockGame1 = `
     ${blockHeader(initialState)}
   <div class="game">
-    <p class="game__task">${level1.description}</p>
+    <p class="game__task">${levels[level.description}]</p>
     <form class="game__content">
       <div class="game__option">
         <img src="http://placehold.it/468x458" alt="Option 1" width="468" height="458">

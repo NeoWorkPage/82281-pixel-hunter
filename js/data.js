@@ -1,4 +1,5 @@
 export const initialState = Object.freeze({
+  level: 'level-1',
   lives: 3,
   time: 12
 });
