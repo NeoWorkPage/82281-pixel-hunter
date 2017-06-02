@@ -1,20 +1,32 @@
+import image from './image'
+
 export const initialState = Object.freeze({
-  level: 'level-1',
   lives: 3,
-  time: 12
+  time: 12,
+  stats: 'state'
 });
 
 export const levels = Object.freeze({
-  'level-1': {
+  'level1': {
     description: `Угадайте для каждого изображения фото или рисунок?`,
-    answer: null
+    image: {
+      'image1': `${image.paintings[1]}`,
+      'image2': `${image.photos[0]}`
+    }
   },
-  'level-2':{
+  'level2':{
     description: 'Угадай, фото или рисунок?',
-    answer: null
+    image: {
+      'image1': `${image.paintings[2]}`
+    }
   },
-  'level-3':{
+  'level3':{
     description: `Найдите рисунок среди изображений`,
-    answer: null
+    image: {
+      'image1':`${image.photos[2]}`,
+      'image2':`${image.photos[1]}`,
+      'image3':`${image.paintings[0]}`
+    }
   }
 });
+

@@ -5,14 +5,15 @@ import blockHeader from './header'
 import blockFooter from './footer'
 import {initialState} from './data'
 import {levels} from './data'
+import state from './state'
 
 const blockGame1 = `
     ${blockHeader(initialState)}
   <div class="game">
-    <p class="game__task">${levels[level.description}]</p>
+    <p class="game__task">${levels.level1.description}</p>
     <form class="game__content">
       <div class="game__option">
-        <img src="http://placehold.it/468x458" alt="Option 1" width="468" height="458">
+        <img src=${levels.level1.image.image1}  alt="Option 1" width="468" height="458">
         <label class="game__answer game__answer--photo">
           <input name="question1" type="radio" value="photo">
           <span>Фото</span>
@@ -23,7 +24,7 @@ const blockGame1 = `
         </label>
       </div>
       <div class="game__option">
-        <img src="http://placehold.it/468x458" alt="Option 2" width="468" height="458">
+        <img src=${levels.level1.image.image2} alt="Option 2" width="468" height="458">
         <label class="game__answer  game__answer--photo">
           <input name="question2" type="radio" value="photo">
           <span>Фото</span>
@@ -34,20 +35,7 @@ const blockGame1 = `
         </label>
       </div>
     </form>
-    <div class="stats">
-      <ul class="stats">
-        <li class="stats__result stats__result--wrong"></li>
-        <li class="stats__result stats__result--slow"></li>
-        <li class="stats__result stats__result--fast"></li>
-        <li class="stats__result stats__result--correct"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--unknown"></li>
-        <li class="stats__result stats__result--unknown"></li>
-      </ul>
-    </div>
+    ${state}
   </div>
   ${blockFooter}
 `;
