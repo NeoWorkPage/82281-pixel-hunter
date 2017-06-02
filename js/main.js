@@ -1,5 +1,4 @@
-import mainScreen from './intro';
-import addMarkup from './addTemplate';
+import screenTemplate from './intro';
+import addTemplate from './addTemplate';
 
-addMarkup(mainScreen);
-
+addTemplate(screenTemplate);

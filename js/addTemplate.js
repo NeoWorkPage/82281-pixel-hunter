@@ -3,3 +3,4 @@ export default function addTemplate(e) {
   mainBlock.innerHTML = e.template;
   e.afterLoaded();
 }
+
