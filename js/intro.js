@@ -1,6 +1,6 @@
 import addTemplate from './addTemplate';
 import greetingScreen from './greeting';
-import blockFooter from './footer'
+import blockFooter from './footer';
 
 
 const blockIntro = `
@@ -14,11 +14,11 @@ const blockIntro = `
 `;
 
 
-
 let screenTemplate = {
   template: blockIntro,
   afterLoaded() {
     document.querySelector(`.intro__asterisk`).onclick = () => addTemplate(greetingScreen);
   }
 };
+
 export default screenTemplate;

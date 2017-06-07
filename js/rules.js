@@ -1,7 +1,7 @@
 import addTemplate from './addTemplate';
 import blockGame1 from './game-1';
 import greetingScreen from './greeting';
-import blockFooter from './footer'
+import blockFooter from './footer';
 
 const blockRules = `
 <header class="header">
@@ -32,18 +32,16 @@ const blockRules = `
 `;
 
 
-
-
 let screenTemplate = {
   template: blockRules,
   afterLoaded() {
     const rulesInput = document.querySelector(`.rules__input`);
     const rulesButton = document.querySelector(`.rules__button`);
 
-    rulesInput.oninput = function() {
-      if( this.value.length !== 0 ){
+    rulesInput.oninput = function () {
+      if (this.value.length !== 0) {
         rulesButton.removeAttribute(`disabled`);
-      }else{
+      } else {
         rulesButton.setAttribute(`disabled`, `disabled`);
       }
     };

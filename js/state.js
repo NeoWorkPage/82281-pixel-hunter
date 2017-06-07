@@ -4,8 +4,7 @@ export default (data) => {
     ${[...data].map((result) => {
       return `<li class="stats__result stats__result--${result}"></li>`;
     }).join(``)}
-  </ul>  
-  `
+  </ul>`;
 };
 
 

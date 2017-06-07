@@ -1,29 +1,26 @@
-import addTemplate from './addTemplate'
-import blockStats from  './stats'
+import addTemplate from './addTemplate';
+import blockStats from './stats';
 import greetingScreen from './greeting';
-import blockFooter from './footer'
-import blockHeader from './header'
-import {initialState} from './data'
-import {levelsAll} from './data'
-import state from './state'
-
-
+import blockFooter from './footer';
+import blockHeader from './header';
+import {initialState} from './data';
+import {levelsAll} from './data';
+import state from './state';
 
 
 const fromHtml = ([image1, image2, image3]) =>{
-  return`
-  <form class="game__content  game__content--triple">
-     <div class="game__option">
-        <img src=${image1} alt="Option 1" width="304" height="455">
-      </div>
-      <div class="game__option  game__option--selected">
-        <img src=${image2} alt="Option 1" width="304" height="455">
-      </div>
-      <div class="game__option">
-        <img src=${image3} alt="Option 1" width="304" height="455">
-      </div>
-    </form>
-  `
+  return `
+    <form class="game__content  game__content--triple">
+        <div class="game__option">
+            <img src=${image1} alt="Option 1" width="304" height="455">
+        </div>
+        <div class="game__option  game__option--selected">
+            <img src=${image2} alt="Option 1" width="304" height="455">
+        </div>
+        <div class="game__option">
+            <img src=${image3} alt="Option 1" width="304" height="455">
+        </div>
+    </form>`;
 };
 
 const blockGame3 = `
@@ -41,9 +38,9 @@ const blockGame3 = `
 
 let screenTemplate = {
   template: blockGame3,
-  afterLoaded(){
+  afterLoaded() {
     const option = document.querySelectorAll(`.game__option`);
-    for ( let i = 0; i < option.length; i++){
+    for (let i = 0; i < option.length; i++) {
       option[i].onclick = () => addTemplate(blockStats);
     }
     document.querySelector(`.header__back`).onclick = () => addTemplate(greetingScreen);

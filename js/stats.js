@@ -1,31 +1,27 @@
-import addTemplate from './addTemplate'
+import addTemplate from './addTemplate';
 import greetingScreen from './greeting';
 import blockFooter from './footer';
 import state from './state';
-import {initialState} from './data'
-import addHeader from './header'
-import {bonusState} from './data'
-
+import {initialState} from './data';
+import addHeader from './header';
+import {bonusState} from './data';
 
 
 const dataData = (bonus) => {
   return `
   ${[...bonus].map(({name, justBonus, points, total, nameClass}) => {
-          return `<tr>
-                    <td></td>
-                    <td class="result__extra">${name}</td>
-                    <td class="result__extra">${justBonus}&nbsp;<span class="stats__result stats__result--${nameClass}"></span></td>
-                    <td class="result__points">×&nbsp;${points}</td>   
-                    <td class="result__total">${total}</td>
-                  </tr>`;
-        }).join(``)}
-  `};
-
-
-
+    return `<tr>
+                <td></td>
+                <td class="result__extra">${name}</td>
+                <td class="result__extra">${justBonus}&nbsp;<span class="stats__result stats__result--${nameClass}"></span></td>
+                <td class="result__points">×&nbsp;${points}</td>   
+                <td class="result__total">${total}</td>
+            </tr>`;
+  }).join(``)}`;
+};
 
 const tableHtml = ({gameNumber, stats, dublePoints, totalPointsStats, amountPoints, bonus}) =>{
-  return`
+  return `
       <tr>
         <td class="result__number">${gameNumber}.</td>
         <td colspan="2">${state(stats)}</td>
@@ -38,7 +34,7 @@ const tableHtml = ({gameNumber, stats, dublePoints, totalPointsStats, amountPoin
        <tr>
         <td colspan="5" class="result__total  result__total--final">${amountPoints}</td>
        </tr>
-  `
+  `;
 };
 
 const blockStats = `
@@ -56,7 +52,7 @@ const blockStats = `
 
 let screenTemplate = {
   template: blockStats,
-  afterLoaded(){
+  afterLoaded() {
     document.querySelector(`.header__back`).onclick = () => addTemplate(greetingScreen);
   }
 };
